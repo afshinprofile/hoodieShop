@@ -13,7 +13,6 @@ function useData<T>(endpoint: string) {
     client
       .get<T[]>(endpoint, { signal: controller.signal })
       .then((res) => {
-        console.log(res.data);
         setData(res.data);
         setIsLoading(false);
       })
