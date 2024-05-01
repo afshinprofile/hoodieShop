@@ -2,10 +2,6 @@ import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
 import client from "../services/api-client";
 
-interface FetchResponse<T> {
-  results: T[];
-}
-
 function useData<T>(endpoint: string) {
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
@@ -15,9 +11,10 @@ function useData<T>(endpoint: string) {
     const controller = new AbortController();
     setIsLoading(true);
     client
-      .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
+      .get<T[]>(endpoint, { signal: controller.signal })
       .then((res) => {
-        setData(res.data.results);
+        console.log(res.data);
+        setData(res.data);
         setIsLoading(false);
       })
       .catch((err) => {
