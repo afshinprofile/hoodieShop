@@ -20,7 +20,7 @@ function ImageLoader({ src, alt, className }: Props) {
       {isLoaded ? (
         <img src={src} alt={alt} className={className} />
       ) : (
-        <div className="placeholder">Loading...</div>
+        <div className="placeholder">درحال بارگزاری . . .</div>
       )}
     </div>
   );
