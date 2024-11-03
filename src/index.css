@@ -6,7 +6,7 @@
 @layer base {
     @font-face {
         font-family: 'Estedad';
-        src: url('./assets/fonts/Estedad.woff2') format('woff2');
+        src: url('/fonts/Estedad.woff2') format('woff2');
         font-weight: 100 900;
         font-style: normal;
         font-display: swap;
@@ -16,5 +16,12 @@
         @apply hover:text-primary transition-colors duration-[120ms];
     }
 
+    .overlay {
+        @apply opacity-0 invisible fixed inset-0 size-full z-10 bg-black/40 backdrop-blur-sm transition-all duration-100 ease-in;
+    }
 
+    .overlay--show {
+        @apply opacity-100 visible;
+    }
+      
 }
