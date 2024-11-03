@@ -2,6 +2,7 @@ import { User } from "iconsax-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import hoodie from "../../assets/hoodie.png";
+import Overlay from "../Overlay";
 import Cart from "./cart/Cart";
 
 function NavBar() {
@@ -65,7 +66,7 @@ function NavBar() {
         </div>
       </div>
       {/* overlay */}
-      <div className={`overlay ${cartClick ? "overlay--show" : ""}`}></div>
+      <Overlay onClick={() => setCartClick(!cartClick)} isClick={cartClick} />
     </>
   );
 }
