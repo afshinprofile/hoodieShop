@@ -15,11 +15,8 @@ function CartItem({ img, name }: Props) {
         {/* Product info */}
         <div className="flex flex-col gap-2">
           {/* product Name */}
-          <Link
-            to={"/"}
-            className="text-sm block w-[154px] line-clamp-1 overflow-hidden text-nowrap text-ellipsis"
-          >
-            {name}
+          <Link to={"/"}>
+            <p className="text-sm line-clamp-1">{name}</p>
           </Link>
           {/* product price */}
           <div className="flex items-center gap-1">
