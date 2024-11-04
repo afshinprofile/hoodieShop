@@ -20,7 +20,7 @@ function ProductCard() {
           </div>
         </div>
         <Link
-          to={"/"}
+          to={`/product/${1}`}
           className="flex items-center justify-center h-9 gap-2 bg-primary text-sm text-white rounded-10 mt-5"
         >
           مشاهده محصول
