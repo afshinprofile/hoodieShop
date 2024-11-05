@@ -1,6 +1,7 @@
 import { ShoppingCart } from "iconsax-react";
 import Button from "../../components/button/Button";
 import hoodie1 from "/products/hoodie1.webp";
+import { Link } from "react-router-dom";
 function ProductPage() {
   return (
     <div>
@@ -27,9 +28,11 @@ function ProductPage() {
               </p>
               {/* product add to cart button */}
               <div className="w-72 mt-auto">
-                <Button variant="primary" icon={<ShoppingCart />}>
-                  افزودن به سبد خرید
-                </Button>
+                <Link to={'/cart'}>
+                  <Button variant="primary" icon={<ShoppingCart />}>
+                    افزودن به سبد خرید
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
