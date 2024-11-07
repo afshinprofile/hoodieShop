@@ -1,21 +1,25 @@
 import useProducts from "../../hooks/useProducts";
 import ProductCard from "./ProductCard";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 
 function ProductCardContainer() {
-  const { data, error, isLoading } = useProducts();
+  const { data, isLoading, error } = useProducts();
   if (error) return <div>{error}</div>;
-  if (isLoading) return <p>محصولات در حال بارگذاری میباشند . . .</p>;
   return (
     <div className="grid grid-cols-4 gap-4">
-      {data.map((item) => (
-        <ProductCard
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          img={item.img_url}
-          price={item.price}
-        />
-      ))}
+      {isLoading ? (
+        <ProductCardSkeleton />
+      ) : (
+        data.map((item) => (
+          <ProductCard
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            img={item.img_url}
+            price={item.price}
+          />
+        ))
+      )}
     </div>
   );
 }
