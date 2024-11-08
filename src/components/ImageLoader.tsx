@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
   src: string;
@@ -18,7 +20,13 @@ function ImageLoader({ src, alt, className }: Props) {
   return (
     <div>
       {isLoaded ? (
-        <img src={src} alt={alt} className={className} />
+        <LazyLoadImage
+          placeholderSrc=""
+          effect="blur"
+          src={src}
+          alt={alt}
+          className={className}
+        />
       ) : (
         <div className="placeholder">درحال بارگزاری . . .</div>
       )}
