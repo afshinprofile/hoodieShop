@@ -16,6 +16,7 @@ function ProductCardContainer() {
             id={item.id}
             name={item.name}
             img={item.img_url}
+            hash={item.img_placeholder}
             price={item.price}
           />
         ))
