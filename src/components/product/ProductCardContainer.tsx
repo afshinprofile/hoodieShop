@@ -8,7 +8,12 @@ function ProductCardContainer() {
   return (
     <div className="grid grid-cols-4 gap-4">
       {isLoading ? (
-        <ProductCardSkeleton />
+        <>
+          <ProductCardSkeleton />
+          <ProductCardSkeleton />
+          <ProductCardSkeleton />
+          <ProductCardSkeleton />
+        </>
       ) : (
         data.map((item) => (
           <ProductCard
