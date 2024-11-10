@@ -1,20 +1,17 @@
 import { ArrowLeft } from "iconsax-react";
 import { Link } from "react-router-dom";
+import { Product } from "../../hooks/useProducts";
 import ImageLoader from "../ImageLoader";
-interface Props {
-  id: number;
-  img: string;
-  hash: string;
-  name: string;
-  price: number;
-}
-function ProductCard({ id, img, name, price, hash }: Props) {
+
+type Props = Product;
+
+function ProductCard({ id, img_url, name, price, img_placeholder }: Props) {
   return (
     <div className="product-card shadow-sm border border-slate-200 p-3 rounded-2xl">
       <div className=" flex items-center justify-center overflow-hidden h-64 p-2 mb-3 border border-slate-100 w-full rounded-xl">
         <ImageLoader
-          src={img}
-          hash={hash}
+          src={img_url}
+          hash={img_placeholder}
           alt="#"
           className=" object-cover w-full h-full"
         />
