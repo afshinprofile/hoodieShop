@@ -4,7 +4,7 @@ import ProductCardSkeleton from "./ProductCardSkeleton";
 
 function ProductCardContainer() {
   const { data, isLoading, error } = useProducts();
-  if (error) return <div>{error}</div>;
+  if (error) return <div>{error.message}</div>;
   return (
     <div className="grid grid-cols-4 gap-4">
       {isLoading ? (
@@ -15,7 +15,7 @@ function ProductCardContainer() {
           <ProductCardSkeleton />
         </>
       ) : (
-        data.map((item) => (
+        data?.map((item) => (
           <ProductCard
             key={item.id}
             {...item}

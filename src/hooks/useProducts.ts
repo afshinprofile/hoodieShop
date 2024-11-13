@@ -9,6 +9,6 @@ export interface Product {
   description: string;
 }
 
-const useProducts = () => useData<Product>("/products");
+const useProducts = () => useData<Product>("/products",'products');
 
 export default useProducts;
