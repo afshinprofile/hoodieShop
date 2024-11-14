@@ -7,7 +7,7 @@ interface Props {
   src: string;
   hash: string;
   alt: string;
-  className: string;
+  className?: string;
 }
 
 function ImageLoader({ src, alt, className, hash }: Props) {
